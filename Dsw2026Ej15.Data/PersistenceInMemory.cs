@@ -42,6 +42,7 @@ namespace Dsw2026Ej15.Data
                     if (especialidadesCargadas != null)
                     {
                         Specialities = especialidadesCargadas;
+                        Console.WriteLine("Especialidades cargadas con exito.");
                     }
                 }
                 else
