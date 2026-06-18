@@ -1,18 +1,15 @@
+using Dsw2026Ej15.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+// Agregamos los controladores al contenedor de servicios
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+
+// VINCULAR LA CAPA DE DATOS CON LA API (Inyeccion de dependencias)
+// Registramos IPersistence para que use la clase PersistenceInMemory como una instancia unica
+builder.Services.AddSingleton<IPersistence, PersistenceInMemory>();
 
 var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
 
 app.UseHttpsRedirection();
 
