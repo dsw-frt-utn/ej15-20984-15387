@@ -25,7 +25,7 @@ namespace Dsw2026Ej15.Data
             try
             {
                 // Definimos el nombre del archivo de datos
-                string archivo = "specialities";
+                string archivo = "specialities.json";
 
                 // Primero verificamos si el archivo realmente existe para no romper el programa
                 if (File.Exists(archivo))
